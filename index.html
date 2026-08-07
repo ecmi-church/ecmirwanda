@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ECMI Rwanda</title>
 
-    <style>
-        body{
-            margin:0;
-            padding:0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-        iframe{
-            width:100%;
-            height:100vh;
-            border:none;
-        }
-    </style>
+<title>ECMI RWANDA</title>
+
+<link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
+<div id="loader">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Loading_2.gif">
+
+<h2>Loading ECMI RWANDA...</h2>
+
+</div>
+
 <iframe
-src="https://script.google.com/macros/s/AKfycbwbH05Iy2FnjjKYTb65Wh9tr_7C7KKGIiypKjWY0iHitk7QUQXOJrEbLXZtHhKaQtFAOQ/exec">
+
+id="website"
+
+src="https://script.google.com/macros/s/AKfycbwbH05Iy2FnjjKYTb65Wh9tr_7C7KKGIiypKjWY0iHitk7QUQXOJrEbLXZtHhKaQtFAOQ/exec"
+
+onload="hideLoader()">
+
 </iframe>
+
+<script src="script.js"></script>
 
 </body>
 </html>
