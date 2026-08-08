@@ -3,11 +3,84 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>ECMI RWANDA</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* Loading screen */
+
+#loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    z-index: 9999;
+
+}
+
+#loader img {
+
+    width: 55px;
+
+    height: 55px;
+
+}
+
+#loader h2 {
+
+    font-family: Arial, sans-serif;
+
+    color: #003366;
+
+    font-size: 20px;
+
+}
+
+/* Apps Script website */
+
+#website {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 100vh;
+
+    border: 0;
+
+}
+
+</style>
 
 </head>
 
@@ -15,23 +88,41 @@
 
 <div id="loader">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Loading_2.gif">
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Loading_2.gif"
+        alt="Loading"
+    >
 
-<h2>Loading ECMI RWANDA...</h2>
+    <h2>Loading ECMI RWANDA...</h2>
 
 </div>
 
+
 <iframe
-
-id="website"
-
-src="https://script.google.com/macros/s/AKfycbyWTBCWHDck39-STID9-35gGJF9L1r45SYrKMdUy4ZtT8Uqa__dFzbI0TbsVvF_lvkz_w/exec"
-
-onload="hideLoader()">
-
+    id="website"
+    src="https://script.google.com/macros/s/AKfycbxdabY-UHs-uQVty_rhNf-k73aKlw5MUEKb-gqLbiEk2U-2H1NNg0VAbryoOXsdlH3RBw/exec"
+    title="ECMI RWANDA"
+    frameborder="0"
+    scrolling="yes">
 </iframe>
 
-<script src="script.js"></script>
+
+<script>
+
+const iframe =
+    document.getElementById("website");
+
+const loader =
+    document.getElementById("loader");
+
+
+iframe.addEventListener("load", function () {
+
+    loader.style.display = "none";
+
+});
+
+</script>
 
 </body>
 </html>
