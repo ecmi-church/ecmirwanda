@@ -8,4 +8,4 @@ Google Apps Script
 
 Official URL
 
-https://script.google.com/macros/s/AKfycbyW4A-Snr6jJhmtAHh1SaGVNkqS-nshH309weN5XkrryUwbj_M5OfhIldTsAhwRn06pOA/exec
+https://script.google.com/macros/s/AKfycbyWTBCWHDck39-STID9-35gGJF9L1r45SYrKMdUy4ZtT8Uqa__dFzbI0TbsVvF_lvkz_w/exec
