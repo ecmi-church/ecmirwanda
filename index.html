@@ -1,128 +1,206 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>ECMI RWANDA</title>
+```
+<title>Evangelical Church and Ministries International - ECMI RWANDA</title>
 
 <style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
+    body {
+        overflow: hidden;
+        background: #ffffff;
+    }
 
-body {
-    overflow: hidden;
-    background: #ffffff;
-}
+    /* =========================
+       LOADING SCREEN
+       ========================= */
 
-/* Loading screen */
+    #loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        z-index: 9999;
+        text-align: center;
+    }
 
-#loader {
+    /* ECMI IMAGE */
 
-    position: fixed;
+    #loader img {
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
+        display: block;
+        margin-bottom: 20px;
+    }
 
-    inset: 0;
+    /* Loading title */
 
-    display: flex;
+    #loader h2 {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #003366;
+        font-size: 22px;
+        font-weight: 600;
+    }
 
-    flex-direction: column;
+    /* Loading animation */
 
-    justify-content: center;
+    .loading-text {
+        margin-top: 12px;
+        font-family: Arial, sans-serif;
+        color: #666666;
+        font-size: 14px;
+    }
 
-    align-items: center;
+    .dots {
+        display: inline-block;
+        width: 24px;
+        text-align: left;
+    }
 
-    background: #ffffff;
+    /* Small loading spinner */
 
-    z-index: 9999;
+    .spinner {
+        width: 32px;
+        height: 32px;
+        margin-top: 18px;
+        border: 4px solid #e6e6e6;
+        border-top: 4px solid #003366;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
 
-}
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
 
-#loader img {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 
-    width: 55px;
+    /* =========================
+       APPS SCRIPT WEBSITE
+       ========================= */
 
-    height: 55px;
+    #website {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        border: 0;
+    }
 
-}
+    /* Mobile adjustment */
 
-#loader h2 {
+    @media (max-width: 600px) {
 
-    font-family: Arial, sans-serif;
+        #loader img {
+            width: 140px;
+            height: 140px;
+        }
 
-    color: #003366;
+        #loader h2 {
+            font-size: 19px;
+        }
 
-    font-size: 20px;
+        .loading-text {
+            font-size: 13px;
+        }
 
-}
-
-/* Apps Script website */
-
-#website {
-
-    display: block;
-
-    width: 100%;
-
-    height: 100vh;
-
-    min-height: 100vh;
-
-    border: 0;
-
-}
-
+        .spinner {
+            width: 28px;
+            height: 28px;
+        }
+    }
 </style>
+```
 
 </head>
 
 <body>
 
+```
+<!-- =========================
+     LOADING SCREEN
+     ========================= -->
+
 <div id="loader">
 
+    <!-- ECMI RWANDA IMAGE FROM GOOGLE DRIVE -->
     <img
-        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Loading_2.gif"
-        alt="Loading"
+        src="https://drive.google.com/thumbnail?id=1EF4yZBkLe4aM8fEiwSeKu_qx7iVx44h2&sz=w1000"
+        alt="ECMI Rwanda"
     >
 
-    <h2>Loading ECMI RWANDA...</h2>
+    <h2>ECMI RWANDA</h2>
+
+    <div class="loading-text">
+        Loading website<span class="dots">...</span>
+    </div>
+
+    <div class="spinner"></div>
 
 </div>
 
 
+<!-- =========================
+     ECMI RWANDA WEBSITE
+     ========================= -->
+
 <iframe
     id="website"
-    src="https://script.google.com/macros/s/AKfycbw2DhE5fchoANRZZdqPJdUteDCo-jIuohyl3WhZhlEZSJysRciqv2pOqdFbafoGpSUn/exec"
-    title="ECMI RWANDA"
+    src="https://script.google.com/macros/s/AKfycbxVolE9lhIWcUET5CqckDeXF_hUqxYnydDIHC8RvNn3HANYg4s7m2LzkL3njCXBNFPiSA/exec"
+    title="Evangelical Church and Ministries International - ECMI RWANDA"
     frameborder="0"
     scrolling="yes">
 </iframe>
 
 
+<!-- =========================
+     LOADING SCRIPT
+     ========================= -->
+
 <script>
 
-const iframe =
-    document.getElementById("website");
+    const iframe = document.getElementById("website");
+    const loader = document.getElementById("loader");
 
-const loader =
-    document.getElementById("loader");
+    /*
+     * Hide loading screen when
+     * the Apps Script website
+     * has finished loading.
+     */
 
+    iframe.addEventListener("load", function () {
 
-iframe.addEventListener("load", function () {
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease";
 
-    loader.style.display = "none";
+        setTimeout(function () {
+            loader.style.display = "none";
+        }, 500);
 
-});
+    });
 
 </script>
+```
 
 </body>
 </html>
